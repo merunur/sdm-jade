@@ -4,6 +4,8 @@ Sparse Distributed Memory implemented with JADE Agent Development Framework
 ## Overall Scenario
 This distributed storage backs up and restores chunks of X bits of data, where X is a configurable parameter, which can take any values. The implementation is tested on X equal 1000 bit, 10000 bits, 100000 bits. The size of data chunks is configured during system initialization and remains unchanged during the system’s lifetime. It can be assumed as the fixed length of the packet in your system.
 
+![alt text](architecture/peer-to-peer scheme.png) 
+
 Architecturally the storage system is a hybrid peer-to-peer network with peer nodes(PeerNode) that preform the actual task of storage and reconstruction of data and the infrastructure nodes implementing helper functions(HelperNode).
 
 
