@@ -20,13 +20,13 @@ The Data is stored based on the principles of proximity/similarity between the D
 ## The procedure to storing data
 The data is stored in a somewhat unconventional way. It is POSITIONWISE added to the content of all identified storage locations. While the Data is binary in nature, for the ease of computations at this step ‘0’ is encoded as “-1” and ‘1’ as “+1”, to convert data from binary format to bipolar format. Also configurable threshold (C) is implemented, constant for each position of the storage. The value of each position is in the range [-C, +C].
 
-![P2P scheme](architecture/storage-model.png)
+![Storage model](architecture/storage-model.png)
 
 ## The search procedure
 The architecture design is best suited for the best match search. This means that the query to the system is a Data chunk of size X bits, which is similar to one of the stored Data chunks. The proximity is again measured by Hamming distance. The query can be generated at any peer and the network cooperatively finds the best matching stored Data. To do this the querying peer performs several iterations monitoring Hamming distance between the response of the iteration i-1 and the current iteration. The distance either converge to 0 or diverge to X/2. This is the search TERMINATION criteria.
 The RESULT of the query is either the binarized Data chunk from the latest iteration if the search procedure has converged or an error code if the procedure has diverged.
 
-## Testing results
-![P2P scheme](architecture/performance.png)
+## Performance testing
+![Performance testing](architecture/performance.png)
 
 
